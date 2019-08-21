@@ -1,0 +1,17 @@
+1.0.2:
+- security/stability fix for improper use of snprintf (05/02/14 U.H.)
+- replaced email address with lgames web URL for feedback (05/02/14 M.S.) 
+- README/INSTALL files improved (05/02/14 M.S.)
+- command-line options for main loop delay, windowed mode and no sound
+  (05/02/14 M.S.)
+- main loop delay to reduce CPU usage (05/02/14 T.M.)
+	
+1.0.1:
+- proper event filter added for blocking wait (03/04/23)
+- include warnings fixed in SFont.c (03/04/23 Pierre Sarrazin)
+- Barrage appears in the GNOME and KDE game menus (03/04/23 Pierre Sarrazin)
+- RPM can be created (03/04/23 Pierre Sarrazin)
+- uninstall added (03/04/23 Pierre Sarrazin)
+
+1.0
+- initial public release (03/04/22)

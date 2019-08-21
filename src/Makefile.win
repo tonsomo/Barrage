@@ -1,0 +1,58 @@
+# Project: Barrage
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = win/bfield.o win/chart.o win/data.o win/main.o win/menu.o win/particle.o win/SFont.o win/shots.o win/units.o $(RES)
+LINKOBJ  = win/bfield.o win/chart.o win/data.o win/main.o win/menu.o win/particle.o win/SFont.o win/shots.o win/units.o $(RES)
+LIBS =  -L"C:/GP2XSDK/lib" -lmingw32 -liconv -lgp2x -lSDL_image -lSDL_mixer -lSDL_ttf -lSDL_inifile -lSDLmain -lSDL -lpng -ljpeg -lvorbisidec -lmad -lfreetype -lz -lunicodefont   
+INCS =  -I"C:/GP2XSDK/include/GP2X"  -I"C:/GP2XSDK/include/SDL"  -I"C:/GP2XSDK/include" 
+CXXINCS =  -I"C:/GP2XSDK/include/GP2X"  -I"C:/GP2XSDK/include/SDL"  -I"C:/GP2XSDK/lib/gcc/mingw32/3.4.2/include"  -I"C:/GP2XSDK/include/c++/3.4.2/backward"  -I"C:/GP2XSDK/include/c++/3.4.2/mingw32"  -I"C:/GP2XSDK/include/c++/3.4.2"  -I"C:/GP2XSDK/include" 
+BIN  = Barrage.exe
+CXXFLAGS = $(CXXINCS)   -DWIN32
+CFLAGS = $(INCS) -D_REENTRANT -DHAVE_CONFIG_H   -DWIN32
+RM = rm -f
+MKDIR = cygwin-mkdir -p
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Barrage.exe all-after
+
+all-before:
+	$(MKDIR) "win"
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $@ $(LIBS)
+
+win/bfield.o: bfield.c
+	$(CC) -c bfield.c -o win/bfield.o $(CFLAGS)
+
+win/chart.o: chart.c
+	$(CC) -c chart.c -o win/chart.o $(CFLAGS)
+
+win/data.o: data.c
+	$(CC) -c data.c -o win/data.o $(CFLAGS)
+
+win/main.o: main.c
+	$(CC) -c main.c -o win/main.o $(CFLAGS)
+
+win/menu.o: menu.c
+	$(CC) -c menu.c -o win/menu.o $(CFLAGS)
+
+win/particle.o: particle.c
+	$(CC) -c particle.c -o win/particle.o $(CFLAGS)
+
+win/SFont.o: SFont.c
+	$(CC) -c SFont.c -o win/SFont.o $(CFLAGS)
+
+win/shots.o: shots.c
+	$(CC) -c shots.c -o win/shots.o $(CFLAGS)
+
+win/units.o: units.c
+	$(CC) -c units.c -o win/units.o $(CFLAGS)

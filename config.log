@@ -1,0 +1,67 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:566: checking for a BSD compatible install
+configure:619: checking whether build environment is sane
+configure:676: checking whether make sets ${MAKE}
+configure:722: checking for working aclocal
+configure:735: checking for working autoconf
+configure:748: checking for working automake
+configure:761: checking for working autoheader
+configure:774: checking for working makeinfo
+configure:794: checking for gcc
+configure:907: checking whether the C compiler (c:/devkitgp2x/bin/arm-linux-gcc  ) works
+configure:923: c:/devkitgp2x/bin/arm-linux-gcc -o conftest    conftest.c  1>&5
+configure:949: checking whether the C compiler (c:/devkitgp2x/bin/arm-linux-gcc  ) is a cross-compiler
+configure:954: checking whether we are using GNU C
+configure:963: c:/devkitgp2x/bin/arm-linux-gcc -E conftest.c
+configure:982: checking whether c:/devkitgp2x/bin/arm-linux-gcc accepts -g
+configure:1016: checking for ranlib
+configure:1044: checking for Cygwin environment
+configure:1060: c:/devkitgp2x/bin/arm-linux-gcc -c -g -O2  conftest.c 1>&5
+configure: In function 'main':
+configure:1056: error: '__CYGWIN32__' undeclared (first use in this function)
+configure:1056: error: (Each undeclared identifier is reported only once
+configure:1056: error: for each function it appears in.)
+configure: failed program was:
+#line 1049 "configure"
+#include "confdefs.h"
+
+int main() {
+
+#ifndef __CYGWIN__
+#define __CYGWIN__ __CYGWIN32__
+#endif
+return __CYGWIN__;
+; return 0; }
+configure:1077: checking for mingw32 environment
+configure:1089: c:/devkitgp2x/bin/arm-linux-gcc -c -g -O2  conftest.c 1>&5
+configure: In function 'main':
+configure:1085: error: '__MINGW32__' undeclared (first use in this function)
+configure:1085: error: (Each undeclared identifier is reported only once
+configure:1085: error: for each function it appears in.)
+configure: failed program was:
+#line 1082 "configure"
+#include "confdefs.h"
+
+int main() {
+return __MINGW32__;
+; return 0; }
+configure:1108: checking for executable suffix
+configure:1118: c:/devkitgp2x/bin/arm-linux-gcc -o conftest -g -O2   conftest.c  1>&5
+configure:1182: checking for sdl-config
+configure:1217: checking for SDL - version >= 1.2.0
+configure:1385: checking for main in -lSDL_mixer
+configure:1400: c:/devkitgp2x/bin/arm-linux-gcc -o conftest -g -O2 -Wall -g -IC:/devkitGP2X/include/SDL -D_REENTRANT
+-IC:/devkitGP2X/include -IC:/devkitGP2X/include/SDL -D_REENTRANT   conftest.c -lSDL_mixer   -LC:/devkitGP2X/lib -Wl,-rpath,C:/devkitGP2X/lib -lSDL -lSDL_gfx --start-group -lSDL_ttf -lfreetype -lSDL --end-group -lSDL_image -ljpeg -lpng12 -lz --start-group -lSDL_mixer -lvorbisidec -lmikmod -lSDL --end-group -lgcc -lm -lc -lexpat -lpthread -ldl 1>&5
+cc1.exe: error: unrecognized command line option "-fstart-group"
+cc1.exe: error: unrecognized command line option "-fend-group"
+cc1.exe: error: unrecognized command line option "-fstart-group"
+cc1.exe: error: unrecognized command line option "-fend-group"
+configure: failed program was:
+#line 1393 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }

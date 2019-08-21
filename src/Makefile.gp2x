@@ -1,0 +1,59 @@
+# Project: Barrage
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+OBJ  = gp2x/bfield.o gp2x/chart.o gp2x/data.o gp2x/main.o gp2x/menu.o gp2x/particle.o gp2x/SFont.o gp2x/shots.o gp2x/units.o gp2x/gp2x_joystick.o
+LINKOBJ  = gp2x/bfield.o gp2x/chart.o gp2x/data.o gp2x/main.o gp2x/menu.o gp2x/particle.o gp2x/SFont.o gp2x/shots.o gp2x/units.o gp2x/gp2x_joystick.o
+LIBS =  -L"C:/GP2XSDK/Tools/arm-gp2x-linux/lib" -lSDL_image -lSDL_mixer -lSDL_ttf -lSDL_inifile -lSDL -lpng -ljpeg -lvorbisidec -lmad -lfreetype -lz -lunicodefont   
+INCS =  -I"C:/GP2XSDK/Tools/arm-gp2x-linux/include"  -I"C:/GP2XSDK/Tools/include"  -I"C:/GP2XSDK/Tools/include/SDL" 
+CXXINCS =  -I"C:/GP2XSDK/Tools/include/c++/3.4.6/backward"  -I"C:/GP2XSDK/Tools/include/c++/3.4.6"  -I"C:/GP2XSDK/Tools/arm-gp2x-linux/include"  -I"C:/GP2XSDK/Tools/include"  -I"C:/GP2XSDK/Tools/include/SDL" 
+BIN  = Barrage.gpe
+CXXFLAGS = $(CXXINCS)   -DGP2X
+CFLAGS = $(INCS) -D_REENTRANT -DHAVE_CONFIG_H   -DGP2X
+RM = rm -f
+MKDIR = cygwin-mkdir -p
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Barrage.gpe all-after
+
+all-before:
+	$(MKDIR) "gp2x"
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $@ $(LIBS)
+
+gp2x/bfield.o: bfield.c
+	$(CC) -c bfield.c -o gp2x/bfield.o $(CFLAGS)
+
+gp2x/chart.o: chart.c
+	$(CC) -c chart.c -o gp2x/chart.o $(CFLAGS)
+
+gp2x/data.o: data.c
+	$(CC) -c data.c -o gp2x/data.o $(CFLAGS)
+
+gp2x/main.o: main.c
+	$(CC) -c main.c -o gp2x/main.o $(CFLAGS)
+
+gp2x/menu.o: menu.c
+	$(CC) -c menu.c -o gp2x/menu.o $(CFLAGS)
+
+gp2x/particle.o: particle.c
+	$(CC) -c particle.c -o gp2x/particle.o $(CFLAGS)
+
+gp2x/SFont.o: SFont.c
+	$(CC) -c SFont.c -o gp2x/SFont.o $(CFLAGS)
+
+gp2x/shots.o: shots.c
+	$(CC) -c shots.c -o gp2x/shots.o $(CFLAGS)
+
+gp2x/units.o: units.c
+	$(CC) -c units.c -o gp2x/units.o $(CFLAGS)
+
+gp2x/gp2x_joystick.o: gp2x_joystick.c
+	$(CC) -c gp2x_joystick.c -o gp2x/gp2x_joystick.o $(CFLAGS)
